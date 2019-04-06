@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import com.lucien.model.User;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,5 +38,10 @@ public class WebController {
         users.add(user2);
 
         return users;
+    }
+
+    @RequestMapping(value = "get/{name}", method = RequestMethod.GET)
+    public String get(@PathVariable String name) {
+        return name;
     }
 }

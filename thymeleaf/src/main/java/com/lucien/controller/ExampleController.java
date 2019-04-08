@@ -47,6 +47,12 @@ public class ExampleController {
         return "eq";
     }
 
+    @RequestMapping("/switch")
+    public String switchcase(ModelMap map) {
+        map.addAttribute("sex", "man");
+        return "switch";
+    }
+
     private List<User> getUserList() {
         List<User> list = new ArrayList<>();
         User user1 = new User("Tom", 18, "123");

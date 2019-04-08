@@ -31,6 +31,14 @@ public class ExampleController {
         return "list";
     }
 
+    @RequestMapping("/url")
+    public String url(ModelMap map) {
+        map.addAttribute("type", "link");
+        map.addAttribute("pageId", "springcloud/2017/09/11/");
+        map.addAttribute("img", "http://www.ityouknow.com/assets/images/neo.jpg");
+        return "url";
+    }
+
     private List<User> getUserList() {
         List<User> list = new ArrayList<>();
         User user1 = new User("Tom", 18, "123");

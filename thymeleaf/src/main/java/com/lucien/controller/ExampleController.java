@@ -39,6 +39,14 @@ public class ExampleController {
         return "url";
     }
 
+    @RequestMapping("/eq")
+    public String eq(ModelMap map) {
+        map.addAttribute("name", "lucien");
+        map.addAttribute("age", 30);
+        map.addAttribute("flag", "yes");
+        return "eq";
+    }
+
     private List<User> getUserList() {
         List<User> list = new ArrayList<>();
         User user1 = new User("Tom", 18, "123");

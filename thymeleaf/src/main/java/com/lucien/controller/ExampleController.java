@@ -4,6 +4,8 @@ package com.lucien.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.lucien.model.User;
 
 import org.springframework.stereotype.Controller;
@@ -57,6 +59,13 @@ public class ExampleController {
     public String inline(ModelMap map) {
         map.addAttribute("userName", "lucien");
         return "inline";
+    }
+
+    @RequestMapping("/object")
+    public String object(HttpServletRequest request) {
+        request.setAttribute("request", "I am request");
+        request.getSession().setAttribute("session", "I am session");
+        return "object";
     }
 
     private List<User> getUserList() {

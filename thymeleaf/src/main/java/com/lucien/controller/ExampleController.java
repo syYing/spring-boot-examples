@@ -2,6 +2,7 @@
 package com.lucien.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -66,6 +67,15 @@ public class ExampleController {
         request.setAttribute("request", "I am request");
         request.getSession().setAttribute("session", "I am session");
         return "object";
+    }
+
+    @RequestMapping("/utility")
+    public String utility(ModelMap map) {
+        map.addAttribute("userName", "lucien");
+        map.addAttribute("users", getUserList());
+        map.addAttribute("count", 4);
+        map.addAttribute("date", new Date());
+        return "utility";
     }
 
     private List<User> getUserList() {

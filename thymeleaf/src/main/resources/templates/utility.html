@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Example build-in vars</title>
+</head>
+
+<body>
+    <div>
+        <h1>build-in vars</h1>
+        <!-- Formating time -->
+        <p th:text="${#dates.format(date, 'yyyy-MM-dd HH:mm:ss')}"></p>
+        <!-- current day -->
+        <p th:text="${#dates.createToday()}"></p>
+        <!-- current time -->
+        <p th:text="${#dates.createNow()}"></p>
+        <!-- isEmpty -->
+        <p th:text="${#strings.isEmpty(userName)}">userName</p>
+        <!-- listIsEmpty -->
+        <p th:text="${#strings.listIsEmpty(users)}">userName</p>
+        <!-- string length -->
+        <p th:text="${#strings.length(userName)}">userName</p>
+        <!-- string splice -->
+        <p th:text="${#strings.concat(userName, userName, userName)}"></p>
+        <!-- custom length -->
+        <p th:text="${#strings.randomAlphanumeric(count)}">userName</p>
+    </div>
+</body>
+</html>

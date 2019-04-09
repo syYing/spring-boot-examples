@@ -53,6 +53,12 @@ public class ExampleController {
         return "switch";
     }
 
+    @RequestMapping("/inline")
+    public String inline(ModelMap map) {
+        map.addAttribute("userName", "lucien");
+        return "inline";
+    }
+
     private List<User> getUserList() {
         List<User> list = new ArrayList<>();
         User user1 = new User("Tom", 18, "123");

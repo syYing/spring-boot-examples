@@ -1,4 +1,4 @@
-package com.lucien.fastdfs;
+package com.lucien;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

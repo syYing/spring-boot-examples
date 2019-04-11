@@ -46,7 +46,7 @@ public class MessageController {
     }
 
     // updateText
-    @PatchMapping(value = "/message/text")
+    @PatchMapping(value = "message/text")
     public Message patch(Message message) {
         Message messageResult = this.messageRepository.updateText(message);
         return messageResult;
